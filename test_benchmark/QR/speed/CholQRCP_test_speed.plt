@@ -77,6 +77,9 @@ do for [type in "Best Mean"] {
 
                                         set output fname_out
 
+                                        #ntics = 4    
+                                        #set xtics n/ntics        
+
                                         if (m == 16384){
                                             set xtics ("" 0, "128" 1, "" 2, "512" 3, "" 4)
                                         }
