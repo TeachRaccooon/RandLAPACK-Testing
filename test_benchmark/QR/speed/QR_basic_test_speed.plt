@@ -31,7 +31,7 @@ linecolor rgb '#ff0000' \
 linetype 1 linewidth 3.0 \
 pointtype 7 pointsize 3.0
 
-do for [type in "Mean"] {
+do for [type in "Best Mean"] {
     do for [m in "16384 65536 131072"] {
         do for [k_multiplier in "1.000000"] {
             do for [mat_type in "6"] {
