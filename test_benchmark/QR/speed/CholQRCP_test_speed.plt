@@ -39,7 +39,7 @@ pointtype 3 pointsize 3.0
 
 #Set line styles
 set style line 5 \
-linecolor rgb "dark-orange" \
+linecolor rgb "#ffc107" \
 linetype 1 linewidth 3.0 \
 pointtype 1 pointsize 3.0
 
@@ -76,6 +76,9 @@ do for [type in "Best Mean"] {
                                         fname_out = sprintf("plots/CholQRCP_comp_time_%s_m_%s_d_multiplier_%s_k_multiplier_%s_log10(tol)_%s_mat_type_%s_cond_%s_nnz_%s_runs_per_sz_%s_OMP_threads_%s.png", type, m, d_multiplier, k_multiplier, log10tol, mat_type, cond, nnz, runs_per_sz, OMP_threads)
 
                                         set output fname_out
+                                        set title "{/*3 QR Speed Comparisons}"
+                                        set xlabel "{/*3 Column size}"
+                                        set ylabel "{/*3 Runtime (μs)}"
 
                                         #ntics = 4    
                                         #set xtics n/ntics        
@@ -90,7 +93,8 @@ do for [type in "Best Mean"] {
                                             set xtics ("" 0, "1024" 1, "" 2, "4096" 3, "" 4)
                                         }
 
-                                        plot fname_in u 0:1:(8) with linespoints linestyle 1 title "CholQRCP", '' u 0:2:(8) with linespoints linestyle 2 title "GEQP3", '' u 0:3:(8) with linespoints linestyle 3 title "TSQRP", '' u 0:4:(8) with linespoints linestyle 4 title "GEQRF", '' u 0:5:(8) with linespoints linestyle 5 title "GEQR"#, '' u 0:6:(8) with linespoints linestyle 6 title "CholQRCP + alloc", '' u 0:7:(8) with linespoints linestyle 7 title "CholQRCP + rest", '' u 0:8:(8) with linespoints linestyle 8 title "CholQRCP + alloc + rest"
+                                        #plot fname_in u 0:1:(8) with linespoints linestyle 1 title "CholQRCP", '' u 0:2:(8) with linespoints linestyle 2 title "GEQP3", '' u 0:3:(8) with linespoints linestyle 3 title "TSQRP", '' u 0:4:(8) with linespoints linestyle 4 title "GEQRF", '' u 0:5:(8) with linespoints linestyle 5 title "GEQR", '' u 0:6:(8) with linespoints linestyle 6 title "CholQRCP + alloc", '' u 0:7:(8) with linespoints linestyle 7 title "CholQRCP + rest", '' u 0:8:(8) with linespoints linestyle 8 title "CholQRCP + alloc + rest"
+                                        plot fname_in u 0:2 with linespoints linestyle 2 title "GEQP3", '' u 0:3 with linespoints linestyle 3 title "TSQRP", '' u 0:4 with linespoints linestyle 4 title "GEQRF", '' u 0:5 with linespoints linestyle 5 title "GEQR", '' u 0:8 with linespoints linestyle 1 title "CholQRCP + alloc + rest"
                                     }
                                 }
                             }
