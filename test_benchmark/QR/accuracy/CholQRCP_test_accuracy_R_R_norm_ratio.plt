@@ -22,11 +22,11 @@ pointtype 7 pointsize 1.5
 do for [m in "131072"] {
     do for [n in "2000"] {
         do for [k in "2000"] {
-            do for [d in "2000"] {
+            do for [d in "10000"] {
                 do for [log10tol in "-14"] {
                     do for [mat_type in "0"] {
                         do for [cond in "10000000000"] {
-                            do for [nnz in "1"]{
+                            do for [nnz in "4"]{
                                 do for [OMP_threads in "36"]{
 
                                     #Set in/out files

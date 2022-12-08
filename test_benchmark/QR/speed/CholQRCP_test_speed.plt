@@ -53,7 +53,7 @@ pointtype 12 pointsize 3.0
 set style line 7 \
 linecolor rgb "sea-green" \
 linetype 1 linewidth 3.0 \
-pointtype 14 pointsize 3.0
+pointtype 9 pointsize 3.0
 
 #Set line styles
 set style line 8 \
@@ -93,8 +93,12 @@ do for [type in "Best Mean"] {
                                             set xtics ("" 0, "1024" 1, "" 2, "4096" 3, "" 4)
                                         }
 
+                                        # Show all
                                         #plot fname_in u 0:1:(8) with linespoints linestyle 1 title "CholQRCP", '' u 0:2:(8) with linespoints linestyle 2 title "GEQP3", '' u 0:3:(8) with linespoints linestyle 3 title "TSQRP", '' u 0:4:(8) with linespoints linestyle 4 title "GEQRF", '' u 0:5:(8) with linespoints linestyle 5 title "GEQR", '' u 0:6:(8) with linespoints linestyle 6 title "CholQRCP + alloc", '' u 0:7:(8) with linespoints linestyle 7 title "CholQRCP + rest", '' u 0:8:(8) with linespoints linestyle 8 title "CholQRCP + alloc + rest"
-                                        plot fname_in u 0:2 with linespoints linestyle 2 title "GEQP3", '' u 0:3 with linespoints linestyle 3 title "TSQRP", '' u 0:4 with linespoints linestyle 4 title "GEQRF", '' u 0:5 with linespoints linestyle 5 title "GEQR", '' u 0:8 with linespoints linestyle 1 title "CholQRCP + alloc + rest"
+                                        # Show CholQRCP + alloc + rest
+                                        #plot fname_in u 0:2 with linespoints linestyle 2 title "GEQP3", '' u 0:3 with linespoints linestyle 3 title "TSQRP", '' u 0:4 with linespoints linestyle 4 title "GEQRF", '' u 0:5 with linespoints linestyle 5 title "GEQR", '' u 0:8 with linespoints linestyle 1 title "CholQRCP + alloc + rest"
+                                        # show 2 CholQRCP
+                                        plot fname_in u 0:2 with linespoints linestyle 2 title "GEQP3", '' u 0:3 with linespoints linestyle 3 title "TSQRP", '' u 0:4 with linespoints linestyle 4 title "GEQRF", '' u 0:5 with linespoints linestyle 5 title "GEQR", '' u 0:8 with linespoints linestyle 1 title "CholQRCP + alloc + rest", '' u 0:1 with linespoints linestyle 7 title "CholQRCP"
                                     }
                                 }
                             }
