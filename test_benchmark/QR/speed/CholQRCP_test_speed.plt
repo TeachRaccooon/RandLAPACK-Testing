@@ -98,7 +98,9 @@ do for [type in "Best Mean"] {
                                         # Show CholQRCP + alloc + rest
                                         #plot fname_in u 0:2 with linespoints linestyle 2 title "GEQP3", '' u 0:3 with linespoints linestyle 3 title "TSQRP", '' u 0:4 with linespoints linestyle 4 title "GEQRF", '' u 0:5 with linespoints linestyle 5 title "GEQR", '' u 0:8 with linespoints linestyle 1 title "CholQRCP + alloc + rest"
                                         # show 2 CholQRCP
-                                        plot fname_in u 0:2 with linespoints linestyle 2 title "GEQP3", '' u 0:3 with linespoints linestyle 3 title "TSQRP", '' u 0:4 with linespoints linestyle 4 title "GEQRF", '' u 0:5 with linespoints linestyle 5 title "GEQR", '' u 0:8 with linespoints linestyle 1 title "CholQRCP + alloc + rest", '' u 0:1 with linespoints linestyle 7 title "CholQRCP"
+                                        #plot fname_in u 0:2 with linespoints linestyle 2 title "GEQP3", '' u 0:3 with linespoints linestyle 3 title "TSQRP", '' u 0:4 with linespoints linestyle 4 title "GEQRF", '' u 0:5 with linespoints linestyle 5 title "GEQR", '' u 0:8 with linespoints linestyle 1 title "CholQRCP + alloc + rest", '' u 0:1 with linespoints linestyle 7 title "CholQRCP"
+                                        # Show graph without GEQP3 (not as dense)
+                                        plot fname_in u 0:3 with linespoints linestyle 3 title "TSQRP", '' u 0:4 with linespoints linestyle 4 title "GEQRF", '' u 0:5 with linespoints linestyle 5 title "GEQR", '' u 0:8 with linespoints linestyle 1 title "CholQRCP + alloc + rest", '' u 0:1 with linespoints linestyle 7 title "CholQRCP"
                                     }
                                 }
                             }
