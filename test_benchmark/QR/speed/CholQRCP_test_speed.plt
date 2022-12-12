@@ -17,43 +17,43 @@ set xlabel offset 0,-3
 set style line 1 \
 linecolor rgb '#000000' \
 linetype 1 linewidth 3.0\
-pointtype 9 pointsize 3.0
+pointtype 8 pointsize 4.0
 
 #Set line styles
 set style line 2 \
 linecolor rgb '#0080ff' \
 linetype 1 linewidth 3.0 \
-pointtype 5 pointsize 3.0
+pointtype 2 pointsize 4.0
 
 #Set line styles
 set style line 3 \
 linecolor rgb '#ff0000' \
 linetype 1 linewidth 3.0 \
-pointtype 7 pointsize 3.0
+pointtype 6 pointsize 4.0
 
 #Set line styles
 set style line 4 \
 linecolor rgb "dark-violet" \
 linetype 1 linewidth 3.0 \
-pointtype 3 pointsize 3.0
+pointtype 4 pointsize 4.0
 
 #Set line styles
 set style line 5 \
 linecolor rgb "#ffc107" \
 linetype 1 linewidth 3.0 \
-pointtype 1 pointsize 3.0
+pointtype 12 pointsize 4.0
 
 #Set line styles
 set style line 6 \
 linecolor rgb "goldenrod" \
 linetype 1 linewidth 3.0 \
-pointtype 12 pointsize 3.0
+pointtype 12 pointsize 4.0
 
 #Set line styles
 set style line 7 \
 linecolor rgb "sea-green" \
 linetype 1 linewidth 3.0 \
-pointtype 9 pointsize 3.0
+pointtype 9 pointsize 4.0
 
 #Set line styles
 set style line 8 \
@@ -62,7 +62,7 @@ linetype 1 linewidth 3.0 \
 pointtype 16 pointsize 3.0
 
 do for [type in "Best Mean"] {
-    do for [m in "16384 65536 131072"] {
+    do for [m in "16384 131072"] {
         do for [d_multiplier in "1.000000"] {
             do for [k_multiplier in "1.000000"] {
                 do for [log10tol in "-12"] {
@@ -95,6 +95,8 @@ do for [type in "Best Mean"] {
 
                                         # Show all
                                         plot fname_in u 0:1 with linespoints linestyle 1 title "CholQRCP", '' u 0:2 with linespoints linestyle 2 title "GEQP3", '' u 0:4 with linespoints linestyle 4 title "TSQRP", '' u 0:5 with linespoints linestyle 5 title "GEQRF", '' u 0:3 with linespoints linestyle 3 title "GEQR"
+                                        # No GEQP3
+                                        #plot fname_in u 0:1 with linespoints linestyle 1 title "CholQRCP", '' u 0:4 with linespoints linestyle 4 title "TSQRP", '' u 0:5 with linespoints linestyle 5 title "GEQRF", '' u 0:3 with linespoints linestyle 3 title "GEQR"
                                     }
                                 }
                             }
