@@ -62,7 +62,7 @@ linetype 1 linewidth 3.0 \
 pointtype 16 pointsize 3.0
 
 do for [type in "Best Mean"] {
-    do for [m in "16384 131072"] {
+    do for [m in "16384 65536 131072"] {
         do for [d_multiplier in "1.000000"] {
             do for [k_multiplier in "1.000000"] {
                 do for [log10tol in "-12"] {
@@ -76,7 +76,8 @@ do for [type in "Best Mean"] {
                                         fname_out = sprintf("plots/CholQRCP_comp_time_%s_m_%s_d_multiplier_%s_k_multiplier_%s_log10(tol)_%s_mat_type_%s_cond_%s_nnz_%s_runs_per_sz_%s_OMP_threads_%s.png", type, m, d_multiplier, k_multiplier, log10tol, mat_type, cond, nnz, runs_per_sz, OMP_threads)
 
                                         set output fname_out
-                                        set title "{/*3 QR Speed Comparisons}"
+                                        set title "{/*3 QR Speed Comparisons}" font ", 10"
+                                        #set title "{/*3 QR + Apply Q Speed Comparisons}" font ", 10"
                                         set xlabel "{/*3 Column size}"
                                         set ylabel "{/*3 Runtime (μs)}"
 
@@ -92,11 +93,20 @@ do for [type in "Best Mean"] {
                                         if (m == 131072){
                                             set xtics ("" 0, "1024" 1, "" 2, "4096" 3, "" 4)
                                         }
-
+                                        
+                                        # BEGIN PLOTS WITH JUST QR
                                         # Show all
-                                        plot fname_in u 0:1 with linespoints linestyle 1 title "CholQRCP", '' u 0:2 with linespoints linestyle 2 title "GEQP3", '' u 0:4 with linespoints linestyle 4 title "TSQRP", '' u 0:5 with linespoints linestyle 5 title "GEQRF", '' u 0:3 with linespoints linestyle 3 title "GEQR"
+                                        #plot fname_in u 0:1 with linespoints linestyle 1 title "CholQRCP", '' u 0:2 with linespoints linestyle 2 title "GEQP3", '' u 0:4 with linespoints linestyle 4 title "TSQRP", '' u 0:5 with linespoints linestyle 5 title "GEQRF", '' u 0:3 with linespoints linestyle 3 title "GEQR"
                                         # No GEQP3
                                         #plot fname_in u 0:1 with linespoints linestyle 1 title "CholQRCP", '' u 0:4 with linespoints linestyle 4 title "TSQRP", '' u 0:5 with linespoints linestyle 5 title "GEQRF", '' u 0:3 with linespoints linestyle 3 title "GEQR"
+                                        # No GEQR
+                                        plot fname_in u 0:1 with linespoints linestyle 1 title "CholQRCP", '' u 0:2 with linespoints linestyle 2 title "GEQP3", '' u 0:4 with linespoints linestyle 4 title "TSQRP", '' u 0:5 with linespoints linestyle 3 title "GEQRF"
+                                        # END PLOTS WITH JUST QR
+                                        
+                                        
+                                        # BEGIN PLOTS WITH APPLOC + APPL
+                                        # No GEQR
+                                        #plot fname_in u 0:6 with linespoints linestyle 1 title "CholQRCP", '' u 0:7 with linespoints linestyle 2 title "GEQP3", '' u 0:9 with linespoints linestyle 4 title "TSQRP", '' u 0:5 with linespoints linestyle 10 title "GEQRF"
                                     }
                                 }
                             }
