@@ -72,13 +72,13 @@ do for [type in "Best"] {
                                 do for [runs_per_sz in "5"] {
                                     do for [OMP_threads in "36"] {
 
-                                        fname_in = sprintf("raw_data/CholQRCP_FLOPS_%s_m_%s_d_multiplier_%s_k_multiplier_%s_log10(tol)_%s_mat_type_%s_cond_%s_nnz_%s_runs_per_sz_%s_OMP_threads_%s.dat", type, m, d_multiplier, k_multiplier, log10tol, mat_type, cond, nnz, runs_per_sz, OMP_threads)
-                                        fname_out = sprintf("plots/CholQRCP_FLOPS_QR_%s_m_%s_d_multiplier_%s_k_multiplier_%s_log10(tol)_%s_mat_type_%s_cond_%s_nnz_%s_runs_per_sz_%s_OMP_threads_%s.png", type, m, d_multiplier, k_multiplier, log10tol, mat_type, cond, nnz, runs_per_sz, OMP_threads)
+                                        fname_in = sprintf("raw_data/CholQRCP_FLOP_RATE_%s_m_%s_d_multiplier_%s_k_multiplier_%s_log10(tol)_%s_mat_type_%s_cond_%s_nnz_%s_runs_per_sz_%s_OMP_threads_%s.dat", type, m, d_multiplier, k_multiplier, log10tol, mat_type, cond, nnz, runs_per_sz, OMP_threads)
+                                        fname_out = sprintf("plots/CholQRCP_FLOP_RATE_QR_%s_m_%s_d_multiplier_%s_k_multiplier_%s_log10(tol)_%s_mat_type_%s_cond_%s_nnz_%s_runs_per_sz_%s_OMP_threads_%s.png", type, m, d_multiplier, k_multiplier, log10tol, mat_type, cond, nnz, runs_per_sz, OMP_threads)
 
                                         set output fname_out
-                                        set title "{/*3 QR FLOPS Comparisons}" font ", 10"
+                                        set title "{/*3 QR FLOP Rates Comparisons}" font ", 10"
                                         set xlabel "{/*3 Column size}"
-                                        set ylabel "{/*3 FLOPS}"
+                                        set ylabel "{/*3 GLOP/s}"
 
                                         #ntics = 4    
                                         #set xtics n/ntics        
@@ -97,9 +97,9 @@ do for [type in "Best"] {
                                         }
                                         
                                         # Show all
-                                        #plot fname_in u 0:1 with linespoints linestyle 1 title "CholQRCP", '' u 0:2 with linespoints linestyle 2 title "GEQP3", '' u 0:4 with linespoints linestyle 4 title "TSQRP", '' u 0:5 with linespoints linestyle 5 title "GEQRF", '' u 0:3 with linespoints linestyle 3 title "GEQR"
+                                        plot fname_in u 0:1 with linespoints linestyle 1 title "CholQRCP", '' u 0:2 with linespoints linestyle 2 title "GEQP3", '' u 0:4 with linespoints linestyle 4 title "TSQRP", '' u 0:5 with linespoints linestyle 5 title "GEQRF", '' u 0:3 with linespoints linestyle 3 title "GEQR"
                                         # No GEQP3
-                                        plot fname_in u 0:1 with linespoints linestyle 1 title "CholQRCP", '' u 0:4 with linespoints linestyle 4 title "TSQRP", '' u 0:5 with linespoints linestyle 5 title "GEQRF", '' u 0:3 with linespoints linestyle 3 title "GEQR"
+                                        #plot fname_in u 0:1 with linespoints linestyle 1 title "CholQRCP", '' u 0:4 with linespoints linestyle 4 title "TSQRP", '' u 0:5 with linespoints linestyle 5 title "GEQRF", '' u 0:3 with linespoints linestyle 3 title "GEQR"
                                     }
                                 }
                             }
