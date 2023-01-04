@@ -89,17 +89,10 @@ do for [type in "Best Mean"] {
                                         #ntics = 4    
                                         #set xtics n/ntics        
 
-                                        if (m == 16384){
-                                            set xtics ("" 0, "128" 1, "" 2, "512" 3, "" 4)
-                                        }
-                                        if (m == 65536){
-                                            set xtics ("" 0, "512" 1, "" 2, "2048" 3, "" 4)
-                                        }
+
                                         if (m == 131072){
-                                            set xtics ("" 0, "1024" 1, "" 2, "4096" 3, "" 4)
-                                        }
-                                        if (m == 262144){
-                                            set xtics ("" 0, "4096" 1)
+                                            #set xtics ("" 0, "1024" 1, "" 2, "4096" 3, "" 4)
+                                            set xtics ("" 0, "64" 1, "" 2, "256" 3, "" 4, "1024" 5, "" 6, "4096" 7, "" 8, "16384" 9)
                                         }
                                         
                                         # BEGIN PLOTS WITH JUST QR
