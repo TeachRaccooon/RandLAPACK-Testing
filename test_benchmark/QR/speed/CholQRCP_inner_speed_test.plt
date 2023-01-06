@@ -1,13 +1,13 @@
-set terminal png size 1000,1000
+set terminal png truecolor size 1000,1000
 set logscale y
-set ytics font ", 30"
-set xtics font ", 30"
+set ytics font ", 25"
+set xtics font ", 25"
 set key font ", 20"
 set xtics offset 0, -1
-set key bottom right
+set key top left
 
 set lmargin 20
-set ylabel offset -7,0
+set ylabel offset -5,0
 set bmargin 9
 set rmargin 6
 set tmargin 6
@@ -69,7 +69,7 @@ pointtype 18 pointsize 3.0
 
 do for [type in "Best Mean"] {
     do for [m in "131072"] {
-        do for [d_multiplier in "1.000000"] {
+        do for [d_multiplier in "1.000000 2.000000"] {
             do for [k_multiplier in "1.000000"] {
                 do for [log10tol in "-12"] {
                     do for [mat_type in "6"] {
@@ -92,14 +92,20 @@ do for [type in "Best Mean"] {
 
                                         if (m == 131072){
                                             #set xtics ("" 0, "1024" 1, "" 2, "4096" 3, "" 4)
-                                            set xtics ("" 0, "64" 1, "" 2, "256" 3, "" 4, "1024" 5, "" 6, "4096" 7, "" 8, "16384" 9)
+                                            set xtics ("32" 0, "" 1, "128" 2, "" 3, "512" 4, "" 5, "2048" 6, "" 7, "8192" 8, "" 9)
                                         }
+
+                                        #set term svg
+                                        set boxwidth 0.7
+                                        #set style fill transparent solid 0.1
                                         
                                         # BEGIN PLOTS WITH JUST QR
                                         # Show all
-                                        #plot fname_in u 0:1 with linespoints linestyle 1 title "SASO", '' u 0:2 with linespoints linestyle 2 title "QRCP", '' u 0:3 with linespoints linestyle 3 title "Rank Rev", '' u 0:4 with linespoints linestyle 4 title "CholQR", '' u 0:5 with linespoints linestyle 5 title "piv(A)", '' u 0:6 with linespoints linestyle 6 title "TRSM(A)", '' u 0:7 with linespoints linestyle 7 title "copy", '' u 0:8 with linespoints linestyle 8 title "resize", '' u 0:9 with linespoints linestyle 9 title "other"
-                                        # Show main
-                                        plot fname_in u 0:1 with linespoints linestyle 3 title "SASO", '' u 0:2 with linespoints linestyle 2 title "QRCP", '' u 0:4 with linespoints linestyle 1 title "CholQR", '' u 0:5 with linespoints linestyle 4 title "piv(A)", '' u 0:6 with linespoints linestyle 5 title "TRSM(A)"
+                                        # plot fname_in u 0:1 with linespoints linestyle 1 title "SASO", '' u 0:2 with linespoints linestyle 2 title "QRCP", '' u 0:3 with linespoints linestyle 3 title "Rank Rev", '' u 0:4 with linespoints linestyle 4 title "CholQR", '' u 0:5 with linespoints linestyle 5 title "piv(A)", '' u 0:6 with linespoints linestyle 6 title "TRSM(A)", '' u 0:7 with linespoints linestyle 7 title "copy", '' u 0:8 with linespoints linestyle 8 title "resize", '' u 0:9 with linespoints linestyle 9 title "other"
+                                        # Show main - lines 
+                                        # plot fname_in u 0:1 with linespoints linestyle 3 title "SASO", '' u 0:2 with linespoints linestyle 2 title "QRCP", '' u 0:4 with linespoints linestyle 1 title "CholQR", '' u 0:5 with linespoints linestyle 4 title "piv(A)", '' u 0:6 with linespoints linestyle 5 title "TRSM(A)"
+                                        # Show main - boxes
+                                        plot fname_in u 0:1 with boxes linestyle 3 title "SASO", '' u 0:2 with boxes linestyle 2 title "QRCP", '' u 0:4 with boxes linestyle 1 title "CholQR", '' u 0:5 with boxes linestyle 4 title "piv(A)", '' u 0:6 with boxes linestyle 5 title "TRSM(A)"
                                     }
                                 }
                             }
