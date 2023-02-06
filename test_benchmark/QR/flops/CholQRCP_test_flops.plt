@@ -4,7 +4,7 @@ set ytics font ", 30"
 set xtics font ", 30"
 set key font ", 20"
 set xtics offset 0, -1
-set key bottom right
+set key top left
 
 set lmargin 20
 set ylabel offset -7,0
