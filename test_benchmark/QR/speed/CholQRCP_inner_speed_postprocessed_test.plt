@@ -7,7 +7,7 @@ set xtics offset 0, -1
 set key top left
 
 set lmargin 20
-set ylabel offset -5,0
+set ylabel offset -2,0
 set bmargin 9
 set rmargin 6
 set tmargin 6
@@ -15,7 +15,7 @@ set xlabel offset 0,-3
 
 #Set line styles
 set style line 1 \
-linecolor rgb '#000000' \
+linecolor rgb 'goldenrod' \
 linetype 1 linewidth 3.0\
 pointtype 8 pointsize 4.0
 
@@ -39,19 +39,19 @@ pointtype 4 pointsize 4.0
 
 #Set line styles
 set style line 5 \
-linecolor rgb "#ffc107" \
+linecolor rgb "sea-green" \
 linetype 1 linewidth 3.0 \
 pointtype 12 pointsize 4.0
 
 #Set line styles
 set style line 6 \
-linecolor rgb "goldenrod" \
+linecolor rgb "sea-green" \
 linetype 1 linewidth 3.0 \
 pointtype 12 pointsize 4.0
 
 #Set line styles
 set style line 7 \
-linecolor rgb "sea-green" \
+linecolor rgb "black" \
 linetype 1 linewidth 3.0 \
 pointtype 9 pointsize 4.0
 
