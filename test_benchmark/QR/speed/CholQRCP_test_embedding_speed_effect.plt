@@ -19,9 +19,9 @@ linecolor rgb '#0080ff' \
 linetype 1 linewidth 5.0 \
 pointtype 8 pointsize 8.0
 
-do for [type in "Best"] {
+do for [type in "Mean"] {
     do for [m in "131072"] {
-        do for [n in "2048"] {
+        do for [n in "1024"] {
             do for [d_multiplier_start in "1.000000"] {
                 do for [d_multiplier_end in "4.000000"] {
                     do for [k_multiplier in "1.000000"] {
