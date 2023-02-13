@@ -36,8 +36,8 @@ do for [type in "Best"] {
                             do for [cond in "0"] {
                                 do for [nnz in "1"] {
                                     do for [runs_per_sz in "5"] {
-                                        do for [OMP_threads in "8"] {
-                                            do for [SASO_threads in "8"] {
+                                        do for [OMP_threads in "36"] {
+                                            do for [SASO_threads in "36"] {
 
                                                 fname_in  = sprintf("raw_data/CholQRCP_HQRRP_FLOP_RATE_%s_m_%s_d_multiplier_%s_k_multiplier_%s_log10(tol)_%s_hqrrp_block_sz_%s_mat_type_%s_cond_%s_nnz_%s_runs_per_sz_%s_OMP_threads_%s_SASO_threads_%s.dat", type, m, d_multiplier, k_multiplier, log10tol, block_sz, mat_type, cond, nnz, runs_per_sz, OMP_threads, SASO_threads)
                                                 fname_out = sprintf("plots/CholQRCP_HQRRP_FLOP_RATE_QR_%s_m_%s_d_multiplier_%s_k_multiplier_%s_log10(tol)_%s_hqrrp_block_sz_%s_mat_type_%s_cond_%s_nnz_%s_runs_per_sz_%s_OMP_threads_%s_SASO_threads_%s.png", type, m, d_multiplier, k_multiplier, log10tol, block_sz, mat_type, cond, nnz, runs_per_sz, OMP_threads, SASO_threads)
