@@ -31,7 +31,7 @@ do for [type in "Best"] {
         do for [d_multiplier in "1.000000"] {
             do for [k_multiplier in "1.000000"] {
                 do for [log10tol in "-11"] {
-                    do for [block_sz in "32"] {
+                    do for [block_sz in "8"] {
                         do for [mat_type in "6"] {
                             do for [cond in "0"] {
                                 do for [nnz in "1"] {
