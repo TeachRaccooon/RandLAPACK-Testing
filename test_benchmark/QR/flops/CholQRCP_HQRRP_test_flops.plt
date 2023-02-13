@@ -28,7 +28,7 @@ pointtype 6 pointsize 8.0
 
 do for [type in "Best"] {
     do for [m in "131072"] {
-        do for [d_multiplier in "1.000000"] {
+        do for [d_multiplier in "2.500000"] {
             do for [k_multiplier in "1.000000"] {
                 do for [log10tol in "-11"] {
                     do for [block_sz in "256"] {
