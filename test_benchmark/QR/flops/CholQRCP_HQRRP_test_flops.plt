@@ -26,12 +26,14 @@ linecolor rgb '#0080ff' \
 linetype 1 linewidth 4.0 \
 pointtype 6 pointsize 8.0
 
+set yrange [100:550]
+
 do for [type in "Best"] {
     do for [m in "131072"] {
         do for [d_multiplier in "1.000000"] {
             do for [k_multiplier in "1.000000"] {
                 do for [log10tol in "-11"] {
-                    do for [block_sz in "16"] {
+                    do for [block_sz in "128"] {
                         do for [mat_type in "6"] {
                             do for [cond in "0"] {
                                 do for [nnz in "1"] {
@@ -43,9 +45,9 @@ do for [type in "Best"] {
                                                 fname_out = sprintf("plots/CholQRCP_HQRRP_FLOP_RATE_QR_%s_m_%s_d_multiplier_%s_k_multiplier_%s_log10(tol)_%s_hqrrp_block_sz_%s_mat_type_%s_cond_%s_nnz_%s_runs_per_sz_%s_OMP_threads_%s_SASO_threads_%s.png", type, m, d_multiplier, k_multiplier, log10tol, block_sz, mat_type, cond, nnz, runs_per_sz, OMP_threads, SASO_threads)
 
                                                 set output fname_out
-                                                set title "{/*3 Effective FLOP rates}" font ", 15"
+                                                
                                                 set xlabel "{/*3 Column size}" font ", 15"
-                                                set ylabel "{/*3 GLOP/s}" font ", 20"
+                                                
 
                                                 #ntics = 4    
                                                 #set xtics n/ntics        
