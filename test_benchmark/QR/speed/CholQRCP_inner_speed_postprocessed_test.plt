@@ -71,7 +71,7 @@ do for [type in "Best"] {
     do for [m in "131072"] {
         do for [d_multiplier in "1.000000"] {
             do for [k_multiplier in "1.000000"] {
-                do for [log10tol in "-12"] {
+                do for [log10tol in "-11"] {
                     do for [mat_type in "6"] {
                         do for [cond in "0"] {
                             do for [nnz in "1"] {
