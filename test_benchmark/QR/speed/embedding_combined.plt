@@ -1,7 +1,7 @@
 set terminal png size 1500,1500
-set ytics font ", 40"
-set xtics font ", 40"
-set key font ", 40"
+set ytics font ", 50"
+set xtics font ", 50"
+set key font ", 50"
 set xtics offset 0, -2.5
 set key top left
 
@@ -35,8 +35,8 @@ fname_in = sprintf("raw_data/embedding_combined.dat")
 fname_out = sprintf("plots/embedding_combined.png")
 
 set output fname_out
-set title "{/*3 Effect of the Embedding Dimension" font ", 15" #on CholQRCP runtime
-set xlabel "{/*3 d/n}" font ", 15"
+#set title "{/*3 Effect of the Embedding Dimension" font ", 17" #on CholQRCP runtime
+set xlabel "{/*3 d/n}" font ", 18"
 set ylabel "{/*3 Runtime (s)}" font ", 20"
 
 #ntics = 4    
