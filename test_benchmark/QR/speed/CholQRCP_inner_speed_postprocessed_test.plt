@@ -1,17 +1,19 @@
-set terminal png truecolor size 1000,1000 
+set terminal png truecolor size 1500,1500 
 set size ratio 1
-set ytics font ", 25"
-set xtics font ", 25"
-set key font ", 20"
-set xtics offset 0, -1
+set ytics font ", 40"
+set xtics font ", 40"
+set key font ", 25"
+set xtics offset 0, -2.5
 set key top left
+set key spacing 1.5 
+set key box lt -1 lw 2
 
-set lmargin 20
-set ylabel offset -2,0
-set bmargin 9
-set rmargin 6
-set tmargin 6
-set xlabel offset 0,-3
+set ylabel offset -4,0
+set lmargin 16.2
+set bmargin 16.2
+set rmargin 16.2
+set tmargin 16.2
+set xlabel offset 0,-6
 
 #Set line styles
 set style line 1 \
@@ -82,9 +84,9 @@ do for [type in "Best"] {
                                         fname_out = sprintf("plots/CholQRCP_inner_time_processed_%s_m_%s_d_multiplier_%s_k_multiplier_%s_log10(tol)_%s_mat_type_%s_cond_%s_nnz_%s_runs_per_sz_%s_OMP_threads_%s.png", type, m, d_multiplier, k_multiplier, log10tol, mat_type, cond, nnz, runs_per_sz, OMP_threads)
 
                                         set output fname_out
-                                        set title "{/*3 CholQRCP Subcomponents}" font ", 10"
-                                        set xlabel "{/*3 Column size}"
-                                        set ylabel "{/*3 Runtime %}"
+                                        #set title "{/*3 CholQRCP Subcomponents}" font ", 10"
+                                        set xlabel "{/*3 Column size}" font ", 17"
+                                        set ylabel "{/*3 Runtime %}" font ", 17"
 
                                         #ntics = 4    
                                         #set xtics n/ntics        

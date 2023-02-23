@@ -2,9 +2,12 @@ set terminal png size 1500,1500
 #set logscale y
 set ytics font ", 50"
 set xtics font ", 50"
-set key font ", 50"
-set xtics offset 0, -2.5
+set key font ", 40"
+set xtics offset 0, -2.2
 set key bottom right
+set grid
+set key spacing 1.5
+set key box lt -1 lw 2
 
 set lmargin 20
 set ylabel offset -8,0
@@ -48,6 +51,7 @@ do for [type in "Best"] {
                                                 set output fname_out
                                                 
                                                 set xlabel "{/*3 Column size}" font ", 20"
+                                                #set ylabel "{/*3 GFLOP/s}" font ", 20"
 
                                                 #ntics = 4    
                                                 #set xtics n/ntics        

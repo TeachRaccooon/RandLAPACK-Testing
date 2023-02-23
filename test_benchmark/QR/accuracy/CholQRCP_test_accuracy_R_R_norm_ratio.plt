@@ -1,23 +1,23 @@
-set terminal png size 1000,1000
-#set logscale y
-set ytics font ", 30"
-set xtics font ", 30"
-set key font ", 30"
-set xtics offset 0, -1
-set key bottom right
+set terminal png size 1500,1500
+set ytics font ", 50"
+set xtics font ", 50"
+set key font ", 35"
+set xtics offset 0, -2.5
+set grid
 
-set lmargin 20
-set ylabel offset -5,0
-set bmargin 9
-set rmargin 6
-set tmargin 6
-set xlabel offset 0,-3
+set title offset 0, 2
+set ylabel offset -10,0
+set lmargin 25
+set bmargin 10
+set rmargin 5
+set tmargin 10
+set xlabel offset 0,-5
 
 #Set line styles
 set style line 1 \
 linecolor rgb '#0080ff' \
-linetype 1 linewidth 1.5\
-pointtype 7 pointsize 1.5
+linetype 1 linewidth 2\
+pointtype 7 pointsize 2
 
 do for [m in "131072"] {
     do for [n in "2000"] {
@@ -35,11 +35,13 @@ do for [m in "131072"] {
 
                                     set output fname_out
                                     #set title "{/*1.8 Approximation Error Ratio}" font ", 17"
-                                    set xlabel "k" font ", 33"
-                                    set ylabel "{/*2 || R_{qp3}[k:, :] || / || R_{cqrcp}[k:, :] ||}" font ", 17"
+                                    #set title "{/*2 || R_{qp3}[k:, :] || / || R_{cqrcp}[k:, :] ||}" font ", 25"
+                                    set xlabel "k" font ", 50"
+                                    set ylabel "{/*2 || R_{qp3}[k:, :] || / || R_{cqrcp}[k:, :] ||}" font ", 25"
 
                                     ntics = 4    
                                     set xtics n/ntics
+                                    set xtics ("" 0, "500" 500, "" 1000, "1500" 1500, "" 2000)
 
                                     plot fname_in u 0:1:xtic(8) with linespoints linestyle 1 notitle
                                     
