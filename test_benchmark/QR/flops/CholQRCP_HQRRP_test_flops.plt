@@ -29,7 +29,7 @@ linecolor rgb '#0080ff' \
 linetype 1 linewidth 4.0 \
 pointtype 6 pointsize 8.0
 
-set yrange [150:600]
+set yrange [150:550]
 
 do for [type in "Best"] {
     do for [m in "131072"] {
@@ -40,7 +40,7 @@ do for [type in "Best"] {
                         do for [mat_type in "6"] {
                             do for [cond in "0"] {
                                 do for [nnz in "1"] {
-                                    do for [runs_per_sz in "5"] {
+                                    do for [runs_per_sz in "15"] {
                                         do for [OMP_threads in "36"] {
                                             do for [SASO_threads in "36"] {
 

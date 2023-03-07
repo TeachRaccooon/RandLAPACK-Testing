@@ -118,6 +118,8 @@ do for [type in "Best"] {
     }
 }
 
+#set yrange[0:200]
+
 do for [type in "Best Mean"] {
     do for [m in "131072"] {
         do for [d_multiplier in "1.000000"] {
