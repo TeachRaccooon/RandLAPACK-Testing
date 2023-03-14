@@ -35,9 +35,9 @@ do for [m in "131072"] {
 
                                     set output fname_out
                                     #set title "{/*1.8 Approximation Error Ratio}" font ", 17"
-                                    #set title "{/*2 || R_{qp3}[k:, :] || / || R_{cqrcp}[k:, :] ||}" font ", 25"
+                                    #set title "{/*2 || R_{qp3}[k+1:, :] || / || R_{cqrcp}[k+1:, :] ||}" font ", 25"
                                     set xlabel "k" font ", 50"
-                                    set ylabel "{/*2 || R_{qp3}[k:, :] || / || R_{cqrcp}[k:, :] ||}" font ", 25"
+                                    set ylabel "{/*2 || R_{qp3}[k+1:, :] || / || R_{cqrcp}[k+1:, :] ||}" font ", 25"
 
                                     ntics = 4    
                                     set xtics n/ntics

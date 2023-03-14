@@ -14,7 +14,7 @@ set ylabel offset -8,0
 set bmargin 9
 set rmargin 6
 set tmargin 6
-set xlabel offset 0,-6
+set xlabel offset 0,-5
 
 #Set line styles
 set style line 1 \
@@ -80,7 +80,7 @@ do for [type in "Best"] {
 
                                         set output fname_out
                                         #set title "{/*3 QR FLOP Rates Comparisons}" font ", 10"
-                                        set xlabel "{/*3 Column size}" font ", 20"
+                                        set xlabel "{/*3 columns}" font ", 20"
                                         set ylabel "{/*3 GLOP/s}" font ", 20"
 
                                         #ntics = 4    

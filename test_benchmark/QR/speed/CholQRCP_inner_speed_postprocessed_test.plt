@@ -13,7 +13,7 @@ set lmargin 16.2
 set bmargin 16.2
 set rmargin 16.2
 set tmargin 16.2
-set xlabel offset 0,-6
+set xlabel offset 0,-5
 
 #Set line styles
 set style line 1 \
@@ -85,7 +85,7 @@ do for [type in "Best"] {
 
                                         set output fname_out
                                         #set title "{/*3 CholQRCP Subcomponents}" font ", 10"
-                                        set xlabel "{/*3 Column size}" font ", 17"
+                                        set xlabel "{/*3 columns}" font ", 17"
                                         set ylabel "{/*3 Runtime %}" font ", 17"
 
                                         #ntics = 4    

@@ -14,7 +14,7 @@ set ylabel offset -7,0
 set bmargin 9
 set rmargin 6
 set tmargin 6
-set xlabel offset 0,-6
+set xlabel offset 0,-5
 
 #Set line styles
 set style line 1 \
@@ -80,7 +80,7 @@ do for [type in "Best"] {
 
                                         set output fname_out
                                         #set title "{/*3 QR Speed Comparisons}" font ", 10"
-                                        set xlabel "{/*3 Column size}" font ", 20"
+                                        set xlabel "{/*3 columns}" font ", 20"
                                         set ylabel "{/*3 Runtime (s)}" font ", 20"
 
                                         #ntics = 4    
@@ -131,12 +131,12 @@ do for [type in "Best Mean"] {
                                 do for [runs_per_sz in "5"] {
                                     do for [OMP_threads in "36"] {
 
-                                        fname_in = sprintf("raw_data/CholQRCP_comp_time_%s_m_%s_d_multiplier_%s_k_multiplier_%s_log10(tol)_%s_mat_type_%s_cond_%s_nnz_%s_runs_per_sz_%s_OMP_threads_%s.dat", type, m, d_multiplier, k_multiplier, log10tol, mat_type, cond, nnz, runs_per_sz, OMP_threads)
-                                        fname_out = sprintf("plots/CholQRCP_comp_time_ALL_%s_m_%s_d_multiplier_%s_k_multiplier_%s_log10(tol)_%s_mat_type_%s_cond_%s_nnz_%s_runs_per_sz_%s_OMP_threads_%s.png", type, m, d_multiplier, k_multiplier, log10tol, mat_type, cond, nnz, runs_per_sz, OMP_threads)
+                                        fname_in = sprintf("raw_data/apply_Q_to_large/CholQRCP_comp_time_%s_m_%s_d_multiplier_%s_k_multiplier_%s_log10(tol)_%s_mat_type_%s_cond_%s_nnz_%s_runs_per_sz_%s_OMP_threads_%s.dat", type, m, d_multiplier, k_multiplier, log10tol, mat_type, cond, nnz, runs_per_sz, OMP_threads)
+                                        fname_out = sprintf("plots/apply_Q_to_large/CholQRCP_comp_time_ALL_%s_m_%s_d_multiplier_%s_k_multiplier_%s_log10(tol)_%s_mat_type_%s_cond_%s_nnz_%s_runs_per_sz_%s_OMP_threads_%s.png", type, m, d_multiplier, k_multiplier, log10tol, mat_type, cond, nnz, runs_per_sz, OMP_threads)
 
                                         set output fname_out
                                         #set title "{/*3 QR + Apply Q Speed Comparisons}" font ", 10"
-                                        set xlabel "{/*3 Column size}"
+                                        set xlabel "{/*3 columns}"
                                         set ylabel "{/*3 Runtime (s)}"
 
                                         #ntics = 4    
