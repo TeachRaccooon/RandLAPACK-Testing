@@ -68,7 +68,7 @@ do for [type in "Best"] {
     do for [m in "131072"] {
         do for [d_multiplier in "1.000000"] {
             do for [k_multiplier in "1.000000"] {
-                do for [log10tol in "-11"] {
+                do for [log10tol in "-12"] {
                     do for [mat_type in "6"] {
                         do for [cond in "0"] {
                             do for [nnz in "1"] {
@@ -100,9 +100,9 @@ do for [type in "Best"] {
                                         }
                                         
                                         # Show all
-                                        plot fname_in u 0:1 with linespoints linestyle 1 title "CQRRPT", '' u 0:4 with linespoints linestyle 2 title "TSQRP", '' u 0:5 with linespoints linestyle 3 title "GEQRF", '' u 0:3 with linespoints linestyle 4 title "GEQR", '' u 0:2 with linespoints linestyle 5 title "GEQP3"
+                                        plot fname_in u 0:1 with linespoints linestyle 1 title "CholQRCP", '' u 0:4 with linespoints linestyle 2 title "TSQRP", '' u 0:5 with linespoints linestyle 3 title "GEQRF", '' u 0:3 with linespoints linestyle 4 title "GEQR", '' u 0:2 with linespoints linestyle 5 title "GEQP3"
                                         # No GEQP3
-                                        #plot fname_in u 0:1 with linespoints linestyle 1 title "CQRRPT", '' u 0:4 with linespoints linestyle 4 title "TSQRP", '' u 0:5 with linespoints linestyle 5 title "GEQRF", '' u 0:3 with linespoints linestyle 3 title "GEQR"
+                                        #plot fname_in u 0:1 with linespoints linestyle 1 title "CholQRCP", '' u 0:4 with linespoints linestyle 4 title "TSQRP", '' u 0:5 with linespoints linestyle 5 title "GEQRF", '' u 0:3 with linespoints linestyle 3 title "GEQR"
                                     }
                                 }
                             }

@@ -19,7 +19,7 @@ static void
 process_dat() {
     // Open data file
     //std::string filename = "speed/raw_data/CholQRCP_embedding_time_Best_m_131072_n_1024_d_multiplier_start_1.000000_d_multiplier_end_4.000000_k_multiplier_1.000000_log10(tol)_-11_mat_type_6_cond_0_nnz_1_runs_per_sz_5_OMP_threads_36.dat";
-    std::string filename = "speed/raw_data/apply_Q_to_large/CholQRCP_comp_time_Best_m_131072_d_multiplier_1.000000_k_multiplier_1.000000_log10(tol)_-12_mat_type_6_cond_0_nnz_1_runs_per_sz_5_OMP_threads_36.dat";
+    std::string filename = "speed/raw_data/CholQRCP_comp_time_Best_m_131072_d_multiplier_1.000000_k_multiplier_1.000000_log10(tol)_-11_mat_type_6_cond_0_nnz_1_runs_per_sz_5_OMP_threads_36_apply_to_large_0.dat";
 
     std::fstream file(filename);
     
