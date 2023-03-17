@@ -4,7 +4,7 @@ set ytics font ", 50"
 set xtics font ", 50"
 set key font ", 40"
 set xtics offset 0, -2.2
-set key top right
+set key bottom right
 set grid
 set key spacing 1.5
 set key box lt -1 lw 2
@@ -29,7 +29,7 @@ linecolor rgb '#0080ff' \
 linetype 1 linewidth 4.0 \
 pointtype 6 pointsize 8.0
 
-set yrange [30:350]
+#set yrange [30:350]
 
 do for [type in "Best"] {
     do for [m in "131072"] {
@@ -41,17 +41,17 @@ do for [type in "Best"] {
                             do for [cond in "0"] {
                                 do for [nnz in "1"] {
                                     do for [runs_per_sz in "5"] {
-                                        do for [OMP_threads in "1"] {
-                                            do for [SASO_threads in "1"] {
+                                        do for [OMP_threads in "36"] {
+                                            do for [SASO_threads in "36"] {
 
-                                                fname_in  = sprintf("raw_data/CholQRCP_HQRRP_FLOP_RATE_%s_m_%s_d_multiplier_%s_k_multiplier_%s_log10(tol)_%s_hqrrp_block_sz_%s_mat_type_%s_cond_%s_nnz_%s_runs_per_sz_%s_OMP_threads_%s_SASO_threads_%s.dat", type, m, d_multiplier, k_multiplier, log10tol, block_sz, mat_type, cond, nnz, runs_per_sz, OMP_threads, SASO_threads)
-                                                fname_out = sprintf("plots/CholQRCP_HQRRP_FLOP_RATE_QR_%s_m_%s_d_multiplier_%s_k_multiplier_%s_log10(tol)_%s_hqrrp_block_sz_%s_mat_type_%s_cond_%s_nnz_%s_runs_per_sz_%s_OMP_threads_%s_SASO_threads_%s.png", type, m, d_multiplier, k_multiplier, log10tol, block_sz, mat_type, cond, nnz, runs_per_sz, OMP_threads, SASO_threads)
+                                                fname_in  = sprintf("raw_data/old_hqrrp/BEST_CASE_CholQRCP_HQRRP_FLOP_RATE_%s_m_%s_d_multiplier_%s_k_multiplier_%s_log10(tol)_%s_hqrrp_block_sz_%s_mat_type_%s_cond_%s_nnz_%s_runs_per_sz_%s_OMP_threads_%s_SASO_threads_%s.dat", type, m, d_multiplier, k_multiplier, log10tol, block_sz, mat_type, cond, nnz, runs_per_sz, OMP_threads, SASO_threads)
+                                                fname_out = sprintf("plots/old_hqrrp/BEST_CASE_CholQRCP_HQRRP_FLOP_RATE_QR_%s_m_%s_d_multiplier_%s_k_multiplier_%s_log10(tol)_%s_hqrrp_block_sz_%s_mat_type_%s_cond_%s_nnz_%s_runs_per_sz_%s_OMP_threads_%s_SASO_threads_%s.png", type, m, d_multiplier, k_multiplier, log10tol, block_sz, mat_type, cond, nnz, runs_per_sz, OMP_threads, SASO_threads)
                                                 #fname_out = sprintf("plots/HQRRP_8_threads_rest_36.png");
 
                                                 set output fname_out
                                                 
                                                 set xlabel "{/*3 columns}" font ", 20"
-                                                #set ylabel "{/*3 GFLOP/s}" font ", 20"
+                                                set ylabel "{/*3 GFLOP/s}" font ", 20"
 
                                                 #ntics = 4    
                                                 #set xtics n/ntics        
