@@ -10,7 +10,7 @@ set key spacing 1.5
 set key box lt -1 lw 2
 
 set lmargin 20
-set ylabel offset -7,0
+set ylabel offset -8,0
 set bmargin 9
 set rmargin 6
 set tmargin 6
@@ -76,10 +76,10 @@ do for [type in "Best"] {
                             do for [nnz in "1"] {
                                 do for [runs_per_sz in "5"] {
                                     do for [OMP_threads in "36"] {
-                                            do for [apply_to_large in "0"] {
+                                            do for [apply_to_large in "1"] {
 
-                                            fname_in = sprintf("raw_data/CholQRCP_comp_time_%s_m_%s_d_multiplier_%s_k_multiplier_%s_log10(tol)_%s_mat_type_%s_cond_%s_nnz_%s_runs_per_sz_%s_OMP_threads_%s_apply_to_large_%s.dat", type, m, d_multiplier, k_multiplier, log10tol, mat_type, cond, nnz, runs_per_sz, OMP_threads, apply_to_large)
-                                            fname_out = sprintf("plots/CholQRCP_comp_time_ALL_%s_m_%s_d_multiplier_%s_k_multiplier_%s_log10(tol)_%s_mat_type_%s_cond_%s_nnz_%s_runs_per_sz_%s_OMP_threads_%s_apply_to_large_%s.png", type, m, d_multiplier, k_multiplier, log10tol, mat_type, cond, nnz, runs_per_sz, OMP_threads, apply_to_large)
+                                            fname_in = sprintf("raw_data/apply_Q_to_large/CholQRCP_comp_time_%s_m_%s_d_multiplier_%s_k_multiplier_%s_log10(tol)_%s_mat_type_%s_cond_%s_nnz_%s_runs_per_sz_%s_OMP_threads_%s_apply_to_large_%s.dat", type, m, d_multiplier, k_multiplier, log10tol, mat_type, cond, nnz, runs_per_sz, OMP_threads, apply_to_large)
+                                            fname_out = sprintf("plots/apply_Q_to_large/CholQRCP_comp_time_ALL_%s_m_%s_d_multiplier_%s_k_multiplier_%s_log10(tol)_%s_mat_type_%s_cond_%s_nnz_%s_runs_per_sz_%s_OMP_threads_%s_apply_to_large_%s.png", type, m, d_multiplier, k_multiplier, log10tol, mat_type, cond, nnz, runs_per_sz, OMP_threads, apply_to_large)
 
                                             set output fname_out
                                             #set title "{/*3 QR + Apply Q Speed Comparisons}" font ", 10"
@@ -101,7 +101,7 @@ do for [type in "Best"] {
                                             if (m == 262144){
                                                 set xtics ("" 0, "4096" 1)
                                             }
-                                            
+                                            unset key
                                             # BEGIN PLOTS WITH APPLOC + APPL
                                             # Show all
                                             #plot fname_in u 0:6 with linespoints linestyle 1 title "CholQRCP", '' u 0:7 with linespoints linestyle 2 title "GEQP3", '' u 0:9 with linespoints linestyle 4 title "TSQRP", '' u 0:8 with linespoints linestyle 5 title "GEQRF", '' u 0:10 with linespoints linestyle 3 title "GEQRF"
