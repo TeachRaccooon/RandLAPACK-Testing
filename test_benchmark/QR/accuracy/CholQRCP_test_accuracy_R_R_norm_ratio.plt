@@ -1,12 +1,12 @@
 set terminal png size 1500,1500
 set ytics font ", 50"
 set xtics font ", 50"
-set key font ", 35"
+set key font ", 40"
 set xtics offset 0, -2.5
 set grid
 
 set title offset 0, 2
-set ylabel offset -10,0
+set ylabel offset -11,0
 set lmargin 25
 set bmargin 10
 set rmargin 5
@@ -19,14 +19,16 @@ linecolor rgb '#0080ff' \
 linetype 1 linewidth 2\
 pointtype 7 pointsize 2
 
+#set yrange [0.985:1.04]
+
 do for [m in "131072"] {
     do for [n in "2000"] {
         do for [k in "2000"] {
-            do for [d in "10000"] {
-                do for [log10tol in "-14"] {
-                    do for [mat_type in "0"] {
+            do for [d in "2000"] {
+                do for [log10tol in "-15"] {
+                    do for [mat_type in "8"] {
                         do for [cond in "10000000000"] {
-                            do for [nnz in "4"]{
+                            do for [nnz in "1"]{
                                 do for [OMP_threads in "36"]{
 
                                     #Set in/out files
@@ -35,9 +37,9 @@ do for [m in "131072"] {
 
                                     set output fname_out
                                     #set title "{/*1.8 Approximation Error Ratio}" font ", 17"
-                                    #set title "{/*2 || R_{qp3}[k+1:, :] || / || R_{cqrcp}[k+1:, :] ||}" font ", 25"
-                                    set xlabel "k" font ", 50"
-                                    set ylabel "{/*2 || R_{qp3}[k+1:, :] || / || R_{cqrcp}[k+1:, :] ||}" font ", 25"
+                                    #set title "{/*2 || R_{qp3}[k+1:, :] || / || R_{cqrrpt}[k+1:, :] ||}" font ", 25"
+                                    set xlabel "{/*3 k}" font ", 20"
+                                    set ylabel "{/*3 || R_{qp3}[k+1:, :] || / || R_{cqrrpt}[k+1:, :] ||}" font ", 20"
 
                                     ntics = 4    
                                     set xtics n/ntics

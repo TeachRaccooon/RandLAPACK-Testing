@@ -80,8 +80,8 @@ do for [type in "Best"] {
                                 do for [runs_per_sz in "5"] {
                                     do for [OMP_threads in "36"] {
 
-                                        fname_in = sprintf("raw_data/CholQRCP_inner_time_processed_%s_m_%s_d_multiplier_%s_k_multiplier_%s_log10(tol)_%s_mat_type_%s_cond_%s_nnz_%s_runs_per_sz_%s_OMP_threads_%s.dat", type, m, d_multiplier, k_multiplier, log10tol, mat_type, cond, nnz, runs_per_sz, OMP_threads)
-                                        fname_out = sprintf("plots/CholQRCP_inner_time_processed_%s_m_%s_d_multiplier_%s_k_multiplier_%s_log10(tol)_%s_mat_type_%s_cond_%s_nnz_%s_runs_per_sz_%s_OMP_threads_%s.png", type, m, d_multiplier, k_multiplier, log10tol, mat_type, cond, nnz, runs_per_sz, OMP_threads)
+                                        fname_in = sprintf("raw_data/cqrrpt_determine_rank/CholQRCP_inner_time_processed_%s_m_%s_d_multiplier_%s_k_multiplier_%s_log10(tol)_%s_mat_type_%s_cond_%s_nnz_%s_runs_per_sz_%s_OMP_threads_%s.dat", type, m, d_multiplier, k_multiplier, log10tol, mat_type, cond, nnz, runs_per_sz, OMP_threads)
+                                        fname_out = sprintf("plots/cqrrpt_determine_rank/CholQRCP_inner_time_processed_%s_m_%s_d_multiplier_%s_k_multiplier_%s_log10(tol)_%s_mat_type_%s_cond_%s_nnz_%s_runs_per_sz_%s_OMP_threads_%s.png", type, m, d_multiplier, k_multiplier, log10tol, mat_type, cond, nnz, runs_per_sz, OMP_threads)
 
                                         set output fname_out
                                         #set title "{/*3 CholQRCP Subcomponents}" font ", 10"
