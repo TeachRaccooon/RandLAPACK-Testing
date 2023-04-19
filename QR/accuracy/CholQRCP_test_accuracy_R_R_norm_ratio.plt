@@ -24,11 +24,11 @@ pointtype 7 pointsize 2
 do for [m in "131072"] {
     do for [n in "2000"] {
         do for [k in "2000"] {
-            do for [d in "2000"] {
+            do for [d in "2000"] { # Include also 6000
                 do for [log10tol in "-15"] {
-                    do for [mat_type in "8"] {
+                    do for [mat_type in "0, 7, 8"] {
                         do for [cond in "10000000000"] {
-                            do for [nnz in "1"]{
+                            do for [nnz in "1"]{ # Include also 4
                                 do for [OMP_threads in "36"]{
 
                                     #Set in/out files
@@ -36,8 +36,6 @@ do for [m in "131072"] {
                                     fname_out = sprintf("plots/R_R_norm_ratio_m_%s_n_%s_k_%s_d_%s_log10(tol)_%s_mat_type_%s_cond_%s_nnz_%s_OMP_threads_%s.png", m, n, k, d, log10tol, mat_type, cond, nnz, OMP_threads)
 
                                     set output fname_out
-                                    #set title "{/*1.8 Approximation Error Ratio}" font ", 17"
-                                    #set title "{/*2 || R_{qp3}[k+1:, :] || / || R_{cqrrpt}[k+1:, :] ||}" font ", 25"
                                     set xlabel "{/*3 k}" font ", 20"
                                     set ylabel "{/*3 || R_{qp3}[k+1:, :] || / || R_{cqrrpt}[k+1:, :] ||}" font ", 20"
 
@@ -46,7 +44,6 @@ do for [m in "131072"] {
                                     set xtics ("" 0, "500" 500, "" 1000, "1500" 1500, "" 2000)
 
                                     plot fname_in u 0:1:xtic(8) with linespoints linestyle 1 notitle
-                                    
                                 }
                             }
                         }

@@ -38,7 +38,6 @@ fname_in = sprintf("raw_data/embedding_combined.dat")
 fname_out = sprintf("plots/embedding_combined.png")
 
 set output fname_out
-#set title "{/*3 Effect of the Embedding Dimension" font ", 17" #on CholQRCP runtime
 set xlabel "{/*3 d/n}" font ", 18"
 set ylabel "{/*3 Runtime (s)}" font ", 20"
 

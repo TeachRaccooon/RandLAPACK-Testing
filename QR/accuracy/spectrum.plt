@@ -22,13 +22,6 @@ linecolor rgb 'blue' \
 linetype 1 linewidth 1.5\
 pointtype 7 pointsize 2
 
-#Set line styles
-set style line 2 \
-linecolor rgb '#0080ff' \
-linetype 1 linewidth 2 \
-pointtype 7 pointsize 2
-
-
 #Set in/out files
 fname_in = sprintf("raw_data/A_spiked_spectrum.dat")
 fname_out = sprintf("plots/A_spiked_spectrum.png")
@@ -39,9 +32,8 @@ set ylabel "{/*3 s_{k}}" font ", 20"
 
 ntics = 4
 set xtics 1024/ntics
-#set xtics ("" 0, "256" 256, "" 512, "768" 768, "" 1024)
 set xtics ("" 0, "500" 500, "" 1000, "1500" 1500, "" 2000)
 
 unset key
 
-plot fname_in u 0:1:xtic(8) with linespoints linestyle 1 title "SPECTRUM"                   
+plot fname_in u 0:1:xtic(8) with linespoints linestyle 1 title "SPECTRUM"
