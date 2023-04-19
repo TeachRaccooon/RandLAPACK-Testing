@@ -101,7 +101,7 @@ do for [type in "Best"] {
                                         
                                         # Show all
                                         #plot fname_in u 0:1 with linespoints linestyle 1 title "CQRRPT", '' u 0:4 with linespoints linestyle 2 title "TSQRP", '' u 0:6 with linespoints linestyle 8 title "sCholQR2", '' u 0:5 with linespoints linestyle 3 title "GEQRF", '' u 0:3 with linespoints linestyle 4 title "GEQR", '' u 0:2 with linespoints linestyle 5 title "GEQP3"
-                                        plot fname_in u 0:1 with linespoints linestyle 1 title "CQRRPT", '' u 0:4 with linespoints linestyle 2 title "TSQRP", '' u 0:6 with linespoints linestyle 4 title "sCholQR2", '' u 0:3 with linespoints linestyle 3 title "GEQR", '' u 0:2 with linespoints linestyle 5 title "GEQP3"
+                                        plot fname_in u 0:1 with linespoints linestyle 1 title "CQRRPT", '' u 0:4 with linespoints linestyle 2 title "TSQRP", '' u 0:6 with linespoints linestyle 4 title "sCholQR3", '' u 0:3 with linespoints linestyle 3 title "GEQR", '' u 0:2 with linespoints linestyle 5 title "GEQP3"
                                     }
                                 }
                             }
